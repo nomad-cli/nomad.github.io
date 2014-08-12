@@ -1,0 +1,21 @@
+---
+-
+  name: Cupertino
+  description: Automate administrative tasks that you would normally have to do through the Apple Dev Center website. Life's too short to manage device identifiers by hand!
+  code: $ ios devices:list
+-
+  name: Houston
+  description: Send push notifications from the command line. Simply provide your credentials, construct your message, and 3...2...1... blastoff.
+  code: $ apn push "<token>" -c /path/to/cert.pem -m "Hello!"
+-
+  name: Dubai
+  description: Generate Passbook .pkpass files with ease. Rapidly iterate on the design and content of your passes, or generate one-offs on the fly.
+  code: $ pk generate Example.pass -T boarding-pass
+-
+  name: Venice
+  description: Secure your In-App-Purchases by verifying App Store purchase receipts, and retrieving the information associated with receipt data.
+  code: $ iap verify /path/to/receipt
+-
+  name: Shenzhen
+  description: Create development builds and then distribute their .ipa files over [TestFlight](https://testflightapp.com/dashboard/), [HockeyApp](http://hockeyapp.net), [Amazon S3](http://aws.amazon.com/s3/), or FTP. Get new builds out to testers and enterprises in seconds.
+  code: $ ipa build && ipa distribute

@@ -1,0 +1,9 @@
+url: http://nomad-cli.com
+title: Nomad
+tagline: World-Class Command Line Utilities For iOS Development
+description: "Nomad is a collection of world-class command line utilities for iOS development."
+permalink: /:title/
+timezone: America/Los_Angeles
+
+markdown: redcarpet
+exclude: ["sass"]

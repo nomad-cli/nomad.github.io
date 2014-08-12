@@ -1,0 +1,90 @@
+@import "compass"
+@import "blueprint"
+
++global-reset
++blueprint
+
+=prevent-selection
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+html body
+  background: #fcfcfc
+  font-family: "Helvetica Neue", Helvetica, sans-serif
+  color: #777 !important
+  margin-bottom: 2em
+  font-size: 125%
+
+  ::selection, ::-moz-selection
+    +text-shadow(0 1px 1px #222)
+    background: #777
+    color: #fff
+
+  a
+    color: #333 !important
+    text-decoration: none
+
+  h1, p
+    a:hover
+      text-decoration: underline
+
+[role="container"]
+  +container
+
+header
+  +box-shadow(#d2d2d2 0px -1px 10px inset)
+  +text-shadow(#eee 0px -1px 1px)
+  background: #e6e6e6
+  padding: 5em 0 3em 0
+  text-align: center
+
+  hgroup
+    h1
+      font-size: 5em
+      margin-bottom: 0.25em
+
+    h2
+      font-size: 1.5em
+      color: #777
+
+  img
+    +prevent-selection
+    padding: 1em 1.5em
+
+  code
+    color: #333
+    font-family: "Meslo", Menlo, Courier, monospace
+    display: block
+    clear: both
+    margin-top: 2em
+
+section
+  +clearfix
+
+  padding: 2.5em 0
+  padding-left: +span(8)
+
+  img
+    +prevent-selection
+    position: absolute
+    width: +span(6)
+    height: +span(10)
+    margin-left: -1 *(+span(8))
+
+  h1
+    margin-top: 140px
+    text-transform: uppercase
+
+  p
+
+footer
+  margin-top: 180px
+  font-size: 75%
+  text-align: center
+
+.wf-loading
+  visibility: hidden
