@@ -6,7 +6,7 @@ layout: default
   {% for project in site.data.projects %}
     <section id="{{ project.name | downcase }}">
       <a href="https://github.com/nomad/{{ project.name }}" title="{{ project.name }}">
-        <img alt="Cupertino" width="230" height="390" src="/images/cupertino.svg"/>
+        <img alt="{{ project.name }}" width="230" height="390" src="/images/{{ project.name | downcase }}.svg"/>
       </a>
 
       <h1>
