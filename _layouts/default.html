@@ -33,7 +33,7 @@
         <nav role="navigation">
         {% for project in site.data.projects %}
           <a href="#{{ project.name | downcase }}" title="{{ project.name }}">
-            <img src="/images/{{ project.name | downcase }}.svg" alt="{{ project.name }}" width="110" />
+            <img src="/images/{{ project.name | downcase }}.svg" alt="{{ project.name }}" />
           </a>
         {% endfor %}
         </nav>
