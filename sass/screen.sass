@@ -1,8 +1,10 @@
-@import "compass"
-@import "blueprint"
+@import './bourbon/bourbon'
+@import './neat/neat'
 
-+global-reset
-+blueprint
+$grid-columns: 12
+
+$tablet: new-breakpoint(max-width 768px 8)
+$mobile: new-breakpoint(max-width 480px 4)
 
 =prevent-selection
   -webkit-touch-callout: none
@@ -15,14 +17,11 @@
 html body
   background: #fcfcfc
   font-family: "Helvetica Neue", Helvetica, sans-serif
-  color: #777 !important
+  color: #777
   margin-bottom: 2em
   font-size: 125%
-
-  ::selection, ::-moz-selection
-    +text-shadow(0 1px 1px #222)
-    background: #777
-    color: #fff
+  margin: 0
+  padding: 0
 
   a
     color: #333 !important
@@ -33,22 +32,31 @@ html body
       text-decoration: underline
 
 [role="container"]
-  +container
+  +outer-container
+
+  [role="main"]
+    +row
 
 header
-  +box-shadow(#d2d2d2 0px -1px 10px inset)
-  +text-shadow(#eee 0px -1px 1px)
+  box-shadow: #d2d2d2 0px -1px 10px inset
+  text-shadow: #eee 0px -1px 1px
   background: #e6e6e6
   padding: 5em 0 3em 0
   text-align: center
 
+  nav
+    img
+      width: 140px
+
   hgroup
     h1
+      color: #000
       font-size: 5em
       margin-bottom: 0.25em
+      margin-top: 0
 
     h2
-      font-size: 1.5em
+      font-size: 1.25em
       color: #777
 
   img
@@ -60,31 +68,85 @@ header
     font-family: "Meslo", Menlo, Courier, monospace
     display: block
     clear: both
-    margin-top: 2em
+    margin: 2em 0
 
 section
-  +clearfix
+  +row
 
-  padding: 2.5em 0
-  padding-left: +span(8)
+  padding: 2.5em 0 2.5em 320px
+  margin-bottom: 8em
 
   img
     +prevent-selection
     position: absolute
-    width: +span(6)
-    height: +span(10)
-    margin-left: -1 *(+span(8))
+    width: 240px
+    margin-left: -240px
+    margin-top: -120px
+
+
+  .details
+    padding: 0 80px
+    +omega
 
   h1
-    margin-top: 140px
     text-transform: uppercase
 
-  p
+  pre
+    overflow: scroll
+
 
 footer
-  margin-top: 180px
+  +row
+
+  margin: 4em 0 2em 0
   font-size: 75%
   text-align: center
+
++media($tablet)
+  header
+    padding: 1em 0
+
+    nav
+      img
+        width: 120px
+
+    hgroup
+      h1
+        font-size: 3em
+
+      h2
+        font-size: 1em
+        padding: 0 1em
+
+  section
+    padding: 0 1em
+
+    img
+      position: static
+      display: block
+      padding: 0 40px
+      clear: both
+      margin: 0 auto
+
+    .details
+      text-align: center
+      padding: 0
+      margin: 0
+
+      h1
+        margin-top: 0
+
+      p
+        padding: 1em 0.5em
+
++media(new-breakpoint(max-width 640px 4))
+  nav
+    width: 400px
+    margin: 0 auto
+
++media($mobile)
+  nav
+    width: auto
 
 .wf-loading
   visibility: hidden

@@ -9,13 +9,15 @@ layout: default
         <img alt="{{ project.name }}" width="230" height="390" src="/images/{{ project.name | downcase }}.svg"/>
       </a>
 
-      <h1>
-        <a href="https://github.com/nomad/{{ project.name }}">{{ project.name }}</a>
-      </h1>
+      <div class="details">
+        <h1>
+          <a href="https://github.com/nomad/{{ project.name }}">{{ project.name }}</a>
+        </h1>
 
-      {{ project.description | markdownify }}
+        {{ project.description | markdownify }}
 
-      <pre><code>{{ project.code | escape }}</code></pre>
+        <pre><code>{{ project.code | escape }}</code></pre>
+      </div>
     </section>
   {% endfor %}
 </div>
