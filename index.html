@@ -4,19 +4,31 @@ layout: default
 
 <div role="container">
   {% for project in site.data.projects %}
-    <section id="{{ project.name | downcase }}">
+    <section id="{{ project.name | downcase }}" itemscope itemtype="SoftwareApplication">
       <a href="https://github.com/nomad/{{ project.name }}" title="{{ project.name }}">
-        <img alt="{{ project.name }}" src="/images/{{ project.name | downcase }}.svg"/>
+        <img alt="{{ project.name }}" src="/images/{{ project.name | downcase }}.svg" itemprop="image"/>
       </a>
 
       <div class="details">
-        <h1>
-          <a href="https://github.com/nomad/{{ project.name }}">{{ project.name }}</a>
+        <h1 itemprop="name">
+          <a href="https://github.com/nomad/{{ project.name }}" itemprop="url">{{ project.name }}</a>
         </h1>
 
-        {{ project.description | markdownify }}
+        <div itemprop="description">
+          {{ project.description | markdownify }}
+        </div>
 
         <pre><code>{{ project.code | escape }}</code></pre>
+
+        <div class="metadata" hidden style="display:none">
+          <link itemprop="license" href="http://opensource.org/licenses/MIT"/>
+          <span itemprop="applicationSuite">Utility</span>
+          <span itemprop="applicationSuite">Command Line Utility</span>
+          <span itemprop="applicationSuite">Nomad</span>
+          <span itemprop="fileFormat">text/x-ruby</span>
+          <span itemprop="operatingSystem">Mac OS X 10.7+</span>
+          <span itemprop="requirements">Ruby 2.0+</span>
+        </div>
       </div>
     </section>
   {% endfor %}
