@@ -1,7 +1,11 @@
-ruby '2.0.0'
 source 'https://rubygems.org'
 
-gem 'github-pages'
-gem 'bourbon'
-gem 'neat'
-gem 'bitters'
+ruby '~> 2.4.2'
+
+# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
+# uncomment the line below. To upgrade, run `bundle update github-pages`.
+gem "github-pages", group: :jekyll_plugins
+
+gem 'bourbon', '~> 4.0'
+gem 'neat', '~> 1.6'
+gem 'bitters', '~> 0.10'
